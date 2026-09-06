@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#8c302b">
+  <meta name="description" content="{{description}}">
+  <meta name="robots" content="{{robots}}">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>{{title}}</title>
+  <link rel="canonical" href="{{canonical}}">
+  <link rel="icon" type="image/svg+xml" href="{{base}}/assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{base}}/assets/site.css">
+  <script src="{{base}}/assets/site.js" defer></script>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Meridy’s — Website Design Preview">
+  <meta property="og:title" content="{{title}}">
+  <meta property="og:description" content="{{description}}">
+  <meta property="og:url" content="{{canonical}}">
+  <meta property="og:image" content="{{site_url}}/assets/social-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Meridy’s Restaurant & Lounge — Russell, Kansas. Website design preview.">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">{{schema}}</script>
+</head>
+<body class="page-{{page}}">
+  <a class="skip-link" href="#main">Skip to content</a>
+  {{preview_notice}}
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="{{base}}/" aria-label="Meridy’s — home"><span class="brand-name">Meridy’s<span class="brand-star" aria-hidden="true">✳</span></span><span class="brand-sub">RESTAURANT &amp; LOUNGE</span></a>
+      <nav class="desktop-nav" aria-label="Main navigation"><a href="{{base}}/menu.html" {{menu_current}}>The menu</a><a href="{{base}}/#our-place">Our place</a><a href="{{base}}/#gather">Gather here</a><a href="{{base}}/#visit">Find us</a></nav>
+      <div class="header-actions"><a class="header-call" href="tel:{{phone_e164}}">{{icon_phone}}<span>{{phone_display}}</span></a><a class="button button-small" href="{{base}}/menu.html">View menu {{icon_arrow}}</a></div>
+      <details class="mobile-navigation"><summary aria-label="Open navigation"><span class="menu-lines" aria-hidden="true"></span><span>Navigate</span></summary><nav aria-label="Mobile navigation"><a href="{{base}}/menu.html">The menu</a><a href="{{base}}/#our-place">Our place</a><a href="{{base}}/#gather">Gather here</a><a href="{{base}}/#visit">Find us &amp; hours</a><a href="{{base}}/about-this-site.html">About this preview</a></nav></details>
+    </div>
+  </header>
+  <main id="main" tabindex="-1">{{content}}</main>
+  <footer class="site-footer">
+    <div class="shell">
+      <div class="footer-invitation"><div><span class="eyebrow">NEXT EXIT. NEXT MEAL. NEXT MEMORY.</span><h2>Make it Meridy’s.</h2></div><a class="button button-cream" href="{{directions}}">Get directions {{icon_northeast}}</a></div>
+      <div class="footer-main"><a class="brand brand-light" href="{{base}}/"><span class="brand-name">Meridy’s<span class="brand-star" aria-hidden="true">✳</span></span><span class="brand-sub">RESTAURANT &amp; LOUNGE</span></a><address>{{street}}<br>Russell, KS {{postal_code}}<br><a href="tel:{{phone_e164}}">{{phone_display}}</a></address><nav aria-label="Footer navigation"><a href="{{base}}/menu.html">Menu highlights</a><a href="{{base}}/#visit">Location &amp; hours</a><a href="{{facebook}}">Facebook {{icon_northeast}}</a></nav><nav aria-label="More information"><a href="{{tripadvisor}}">Guest reviews {{icon_northeast}}</a><a href="{{base}}/about-this-site.html">Photo credits &amp; sources</a><a href="{{base}}/about-this-site.html#privacy">Privacy information</a></nav></div>
+      <div class="footer-bottom"><span>Russell, Kansas. Come hungry. Pull up a chair.</span><span>Independent website design preview · {{year}}</span></div>
+    </div>
+  </footer>
+  <nav class="mobile-action-bar" aria-label="Quick restaurant actions"><a href="{{base}}/menu.html">{{icon_menu}}<span>Menu</span></a><a href="tel:{{phone_e164}}">{{icon_phone}}<span>Call</span></a><a href="{{directions}}">{{icon_pin}}<span>Directions</span></a></nav>
+</body>
+</html>

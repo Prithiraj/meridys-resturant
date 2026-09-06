@@ -1,0 +1,39 @@
+{
+  "name": "Meridy’s Restaurant & Lounge",
+  "short_name": "Meridy’s",
+  "city": "Russell",
+  "region": "KS",
+  "street": "1220 S Fossil Street",
+  "postal_code": "67665",
+  "country": "US",
+  "phone_display": "(785) 483-4300",
+  "phone_e164": "+17854834300",
+  "alternate_phone": "(785) 483-2635",
+  "phone_note": "Kansas Tourism lists this number; another local directory lists (785) 483-2635. Operator confirmation is pending.",
+  "hours": [
+    {"days": "Monday–Saturday", "display": "6 a.m.–10 p.m.", "schema_days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "opens": "06:00", "closes": "22:00"},
+    {"days": "Sunday", "display": "7 a.m.–10 p.m.", "schema_days": ["Sunday"], "opens": "07:00", "closes": "22:00"}
+  ],
+  "hours_note": "Published listing hours, not operator-confirmed. Call before a special trip; buffet, lounge, and holiday hours may differ.",
+  "facebook": "https://www.facebook.com/p/Meridys-Restaurant-Lounge-100066921303576/",
+  "tripadvisor": "https://www.tripadvisor.com/Restaurant_Review-g39037-d821127-Reviews-Meridy_s_Restaurant_Lounge-Russell_Kansas.html",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Meridy%27s+Restaurant+%26+Lounge%2C+1220+S+Fossil+Street%2C+Russell%2C+KS+67665",
+  "directions": "https://www.google.com/maps/dir/?api=1&destination=Meridy%27s+Restaurant+%26+Lounge%2C+1220+S+Fossil+Street%2C+Russell%2C+KS+67665",
+  "base_url": "https://prithiraj.github.io/meridys-resturant",
+  "research_date": "2026-09-07",
+  "preview": true,
+  "approvals": {"operator": false, "phone": false, "hours": false, "menu": false, "photos": false, "social": false},
+  "sources": [
+    {"name": "Kansas Tourism", "url": "https://www.travelks.com/listing/meridys-restaurant-%26-lounge/11861/", "supports": "Business name, address, published phone, steak cuts, private dining, and lounge."},
+    {"name": "Russell Area Chamber of Commerce", "url": "https://russellchamber.org/our-members-2025", "supports": "Address and conflicting phone number; resolve before commercial launch."},
+    {"name": "Tripadvisor", "url": "https://www.tripadvisor.com/Restaurant_Review-g39037-d821127-Reviews-Meridy_s_Restaurant_Lounge-Russell_Kansas.html", "supports": "Published opening hours and review destination. No reviews or rating reproduced."},
+    {"name": "Published menu directory", "url": "https://places.singleplatform.com/meridys-restaurant-and-lounge/menu", "supports": "Menu category and item-name research. Prices and present availability not verified; no prices reproduced."},
+    {"name": "iExit · I-70 Exit 184", "url": "https://www.iexitapp.com/Kansas/I-70/Exit%20184/9265", "supports": "Exit reference and location north of the interstate."},
+    {"name": "About You Realty", "url": "https://www.aboutyourealty.com/details.html?id=30660", "supports": "Restaurant-space research only. Photos are NOT licensed for use here and are not copied."}
+  ],
+  "menu": [
+    {"id": "steaks", "title": "Steaks", "eyebrow": "The steak stop", "image": "steak", "description": "Ribeye, T-bone, and Kansas City strip appear in Meridy’s published listings. Call for today’s available cuts and prices.", "items": ["Ribeye", "T-bone", "Kansas City strip"], "source": 0},
+    {"id": "breakfast", "title": "Breakfast", "eyebrow": "Good mornings", "image": "breakfast", "description": "A breakfast stop for the road ahead. Published menu references include omelets, pancakes, and biscuits with sausage gravy.", "items": ["Omelets", "Pancakes", "Biscuits with sausage gravy"], "source": 3},
+    {"id": "classics", "title": "American classics", "eyebrow": "Comfort on a plate", "image": "burger", "description": "Burgers, sandwiches, and familiar dinner plates. Explore the published highlights, then call for current selections.", "items": ["Burgers and sandwiches", "Chicken-fried steak", "Fried chicken"], "source": 3}
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "meridys-restaurant-preview",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Static restaurant design preview. Node dependencies are QA-only, never shipped to visitors.",
+  "scripts": {
+    "build": "python scripts/build.py",
+    "test": "python tests/check_site.py",
+    "test:browser": "node tests/browser.mjs",
+    "test:lighthouse": "node tests/lighthouse.mjs"
+  },
+  "engines": {"node": ">=22"},
+  "devDependencies": {
+    "@axe-core/playwright": "4.10.2",
+    "playwright": "1.55.0",
+    "lighthouse": "12.8.2"
+  }
+}

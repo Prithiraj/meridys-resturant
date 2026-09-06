@@ -1,0 +1,2 @@
+# Build-time only. No runtime Python or JavaScript framework dependency.
+Pillow==11.3.0
