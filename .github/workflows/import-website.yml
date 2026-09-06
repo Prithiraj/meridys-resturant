@@ -1,0 +1,117 @@
+name: Import website, test, and publish
+on:
+  push:
+    paths:
+      - '.github/workflows/import-website.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+  pages: read
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify and import authored source
+        shell: python
+        run: |
+          import base64, hashlib, json, lzma
+          from pathlib import Path, PurePosixPath
+          chunks = [Path(f'.bootstrap/source-{i}.b64') for i in range(4)]
+          encoded = ''.join(''.join(path.read_text().split()) for path in chunks)
+          blob = base64.b64decode(encoded, validate=True)
+          expected = '9d30e129a0c3d1963571e1fe326269c6f026adb6af7991c2c54ef10bcc585400'
+          actual = hashlib.sha256(blob).hexdigest()
+          assert actual == expected, f'Source checksum mismatch: {actual}'
+          source = json.loads(lzma.decompress(blob))
+          allowed = {
+            'templates/menu.html', 'templates/home.html', 'templates/layout.html',
+            'templates/about-this-site.html', 'templates/404.html', 'data/business.json',
+            'docs/design-plan.md', 'docs/qa.md', 'docs/launch-checklist.md',
+            'docs/implementation.md', 'docs/image-rights.md', 'scripts/build.py',
+            'tests/server.mjs', 'tests/lighthouse.mjs', 'tests/check_site.py',
+            'tests/browser.mjs', 'README.md', 'requirements.txt', 'package.json',
+            'public/assets/site.css', 'public/assets/site.js', 'public/assets/favicon.svg',
+            '.github/workflows/deploy.yml'
+          }
+          assert set(source) == allowed, 'Unexpected source paths'
+          for name, content in source.items():
+            relative = PurePosixPath(name)
+            assert not relative.is_absolute() and '..' not in relative.parts
+            assert isinstance(content, str)
+            if name.startswith('.github/'):
+              continue  # The connected GitHub client will install the normal workflow separately.
+            path = Path(name)
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(content, encoding='utf-8')
+          ignore = Path('.gitignore')
+          ignore.write_text(ignore.read_text() + '\n# Restaurant build and QA outputs\n_site/\nreports/\n__pycache__/\n.venv/\nphoto-bundle/\n.DS_Store\n')
+          for path in chunks:
+            path.unlink()
+          print(f'Imported {len(source)-1} readable source files; checksum verified.')
+      - run: python -m pip install -r requirements.txt
+      - run: npm install --ignore-scripts
+      - name: Commit readable website source and dependency lock
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add README.md requirements.txt package.json package-lock.json .gitignore templates data docs scripts tests public/assets/site.css public/assets/site.js public/assets/favicon.svg
+          git add -u -- .bootstrap
+          git commit -m 'feat: add vibrant accessible Meridys website, documented plan, and QA suite'
+          git pull --rebase origin main
+          git push origin HEAD:main
+          echo "Imported source commit: $(git rev-parse HEAD)"
+      - run: npx playwright install --with-deps chromium
+      - run: python scripts/build.py
+      - run: python tests/check_site.py
+      - run: npm run test:browser
+      - run: npm run test:lighthouse
+      - name: Save quality reports and browser screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: quality-report
+          path: reports/
+          retention-days: 14
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+      - name: Verify published homepage and menu
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+        run: |
+          for attempt in 1 2 3 4 5 6; do
+            curl --fail --silent --location "${PAGE_URL}?v=${GITHUB_SHA}" -o /tmp/home.html || true
+            curl --fail --silent --location "${PAGE_URL}menu.html?v=${GITHUB_SHA}" -o /tmp/menu.html || true
+            if grep -q 'Pull up' /tmp/home.html && grep -q 'Menu highlights' /tmp/menu.html; then
+              echo "Published and verified: ${PAGE_URL}"
+              exit 0
+            fi
+            sleep 10
+          done
+          echo 'Deployment completed but HTTP content verification failed.'
+          exit 1
