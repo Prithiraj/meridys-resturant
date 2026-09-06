@@ -1,0 +1,277 @@
+[
+  {
+    "name": "steak",
+    "photo_id": "cpkPJ-U9eUM",
+    "photographer": "Emerson Vieira",
+    "source": "https://unsplash.com/photos/cooked-sliced-meat-cpkPJ-U9eUM",
+    "license": "https://unsplash.com/license",
+    "status": "licensed-illustrative-not-meridys",
+    "download_url": "https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=max&w=1800&q=85",
+    "license_checked": "2026-09-07",
+    "source_sha256": "a8880366deacc906e2fe237e82b29f772a999d5da0a19ef1d290a1bf7207acbb",
+    "variants": [
+      {
+        "file": "steak-480.webp",
+        "width": 480,
+        "height": 270,
+        "bytes": 15504,
+        "sha256": "1992115ad32d4d490fd47c580d03214c7a2c84ec6e8262ae6caf0a7d3a967f12"
+      },
+      {
+        "file": "steak-480.jpg",
+        "width": 480,
+        "height": 270,
+        "bytes": 23316,
+        "sha256": "8f83ab7b5e73fa0a83d7fded27c7853b9da8c0df8b34aeb4fb36e86e79d4fd0c"
+      },
+      {
+        "file": "steak-900.webp",
+        "width": 900,
+        "height": 507,
+        "bytes": 38872,
+        "sha256": "6582ea7803f0b66f7f5849413b2a8d25c23bcc85dd2023f696b8a16da0b20c0b"
+      },
+      {
+        "file": "steak-900.jpg",
+        "width": 900,
+        "height": 507,
+        "bytes": 65394,
+        "sha256": "4d75680167b808f718f7ce34355ae60125f02f6589862e3fa33c6c7fd249ba37"
+      },
+      {
+        "file": "steak-1600.webp",
+        "width": 1600,
+        "height": 900,
+        "bytes": 98874,
+        "sha256": "168981e983f19c5529152eacc4d5b172091d624df1a7903d7ad55a53d64d9b96"
+      },
+      {
+        "file": "steak-1600.jpg",
+        "width": 1600,
+        "height": 900,
+        "bytes": 187055,
+        "sha256": "412ab10042c2905c49218e39f72809ca1c89e2de8cf9a037d5d30972a2e3d9ce"
+      }
+    ]
+  },
+  {
+    "name": "breakfast",
+    "photo_id": "TkzdkVn1AyA",
+    "photographer": "Mae Mu",
+    "source": "https://unsplash.com/photos/pancakes-with-syrup-TkzdkVn1AyA",
+    "license": "https://unsplash.com/license",
+    "status": "licensed-illustrative-not-meridys",
+    "download_url": "https://images.unsplash.com/photo-1554520735-0a6b8b6ce8b7?auto=format&fit=max&w=1800&q=85",
+    "license_checked": "2026-09-07",
+    "source_sha256": "548dd8562ba6f1973eaf1024f44cca61749190419c4e563f1360d817910350c8",
+    "variants": [
+      {
+        "file": "breakfast-480.webp",
+        "width": 480,
+        "height": 600,
+        "bytes": 23930,
+        "sha256": "f631dc865b40142b8c72befb79f8f0d787eb44ada07dbb77ba81bd019f4ab35b"
+      },
+      {
+        "file": "breakfast-480.jpg",
+        "width": 480,
+        "height": 600,
+        "bytes": 37970,
+        "sha256": "691d9d71144bcc3b8efacd86dcb389a8d83b193a5fd4a6158f015f6c26e460df"
+      },
+      {
+        "file": "breakfast-900.webp",
+        "width": 900,
+        "height": 1125,
+        "bytes": 59900,
+        "sha256": "d571542e2f5113b07a627feef0fcccd55f2fa09231dcf490515b2d43566f695f"
+      },
+      {
+        "file": "breakfast-900.jpg",
+        "width": 900,
+        "height": 1125,
+        "bytes": 105681,
+        "sha256": "0c622344623f76c217379334d0416c3717a8bb065153bb90d5c7cdb30104392e"
+      },
+      {
+        "file": "breakfast-1600.webp",
+        "width": 1600,
+        "height": 2000,
+        "bytes": 135276,
+        "sha256": "30fd2ec6875278bc93ee4e6049a5fa77bd349159fdf397a1771caadb977d1941"
+      },
+      {
+        "file": "breakfast-1600.jpg",
+        "width": 1600,
+        "height": 2000,
+        "bytes": 285204,
+        "sha256": "00743348c80580079dfa433e6281e22396f6548fbdfa398527d2e3c705e48f50"
+      }
+    ]
+  },
+  {
+    "name": "burger",
+    "photo_id": "BDG_Uu9Dguk",
+    "photographer": "Chantel",
+    "source": "https://unsplash.com/photos/burger-with-fries-on-stainless-steel-round-plate-BDG_Uu9Dguk",
+    "license": "https://unsplash.com/license",
+    "status": "licensed-illustrative-not-meridys",
+    "download_url": "https://images.unsplash.com/photo-1627781962452-6b468257844b?auto=format&fit=max&w=1800&q=85",
+    "license_checked": "2026-09-07",
+    "source_sha256": "19d85d8c31a2274d6b22d829d61108940d5f024bbf47376f966d933a096faeea",
+    "variants": [
+      {
+        "file": "burger-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 18982,
+        "sha256": "4f3ee4570d6eaef4a4c72262472f7609ed772550d4de0975c765793c8fe84cdc"
+      },
+      {
+        "file": "burger-480.jpg",
+        "width": 480,
+        "height": 320,
+        "bytes": 28124,
+        "sha256": "d4851113aa32e4b4c938ede101d7dda0b3d0ab36a0a952275666860a7036824e"
+      },
+      {
+        "file": "burger-900.webp",
+        "width": 900,
+        "height": 600,
+        "bytes": 48094,
+        "sha256": "2c9fe84cf02a1f3246bd304e535a300316e19dbc7e2e85fffb49f464099bb9ff"
+      },
+      {
+        "file": "burger-900.jpg",
+        "width": 900,
+        "height": 600,
+        "bytes": 79401,
+        "sha256": "77a366b8f574eb99b06ddafd17eb2bb3a93978db580baf70508e7e39d73cb818"
+      },
+      {
+        "file": "burger-1600.webp",
+        "width": 1600,
+        "height": 1067,
+        "bytes": 113282,
+        "sha256": "30e3ad86c6935f145582b33f212f2c0b132408ed5d618deb99774953b67d53cc"
+      },
+      {
+        "file": "burger-1600.jpg",
+        "width": 1600,
+        "height": 1067,
+        "bytes": 221018,
+        "sha256": "7c73ebf28be491f2c1b602af8fccadb01aa5b51c69b388e63037dc15e147d5c6"
+      }
+    ]
+  },
+  {
+    "name": "coffee",
+    "photo_id": "N3btvQ51dL0",
+    "photographer": "Nathan Dumlao",
+    "source": "https://unsplash.com/photos/person-pouring-black-coffee-in-white-ceramic-mug-placed-on-brown-wooden-table-during-daytime-N3btvQ51dL0",
+    "license": "https://unsplash.com/license",
+    "status": "licensed-illustrative-not-meridys",
+    "download_url": "https://images.unsplash.com/photo-1522012188892-24beb302783d?auto=format&fit=max&w=1800&q=85",
+    "license_checked": "2026-09-07",
+    "source_sha256": "8c311b356c9753fd7ed73f81c6033901cd394d5eb8d2270ebb829375b7aedf13",
+    "variants": [
+      {
+        "file": "coffee-480.webp",
+        "width": 480,
+        "height": 720,
+        "bytes": 19854,
+        "sha256": "177fa5147b7d327ee3e7e949061e192db7803ff4f3f93bcee3d6cedabe3cd236"
+      },
+      {
+        "file": "coffee-480.jpg",
+        "width": 480,
+        "height": 720,
+        "bytes": 37629,
+        "sha256": "400501e586eb81b687dd0d062df41760b2917b15f051198fba676ed32550e381"
+      },
+      {
+        "file": "coffee-900.webp",
+        "width": 900,
+        "height": 1350,
+        "bytes": 47600,
+        "sha256": "9e71b440aa3061b11fc0847cb984be25e66b684f9e08bbc15b478287cdcfb7a2"
+      },
+      {
+        "file": "coffee-900.jpg",
+        "width": 900,
+        "height": 1350,
+        "bytes": 102944,
+        "sha256": "6b656abeac87920a6625278ea70d3c71bcc760f78569600688b03bf76ced2bc4"
+      },
+      {
+        "file": "coffee-1600.webp",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 118344,
+        "sha256": "75407b567f434c65cbbf30992370f904bfced83bb72c2571c050665461bf51ca"
+      },
+      {
+        "file": "coffee-1600.jpg",
+        "width": 1600,
+        "height": 2400,
+        "bytes": 300648,
+        "sha256": "ca81c66e1938327d387b2fd96d654f55f7b49bbe7547f4100d2b76ebf4351eb1"
+      }
+    ]
+  },
+  {
+    "name": "lounge",
+    "photo_id": "WCm4dFvZnMM",
+    "photographer": "Louis Hansel",
+    "source": "https://unsplash.com/photos/person-holding-handle-of-faucet-WCm4dFvZnMM",
+    "license": "https://unsplash.com/license",
+    "status": "licensed-illustrative-not-meridys",
+    "download_url": "https://images.unsplash.com/photo-1555658636-6e4a36218be7?auto=format&fit=max&w=1800&q=85",
+    "license_checked": "2026-09-07",
+    "source_sha256": "27e462ef512218ae07572305dc60e43b41ed0e5fbe6b3c3c68182006fab2055f",
+    "variants": [
+      {
+        "file": "lounge-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 24510,
+        "sha256": "12ffe64b481ce1e94d2ddc1e1f62c2a84ba55829387bef99a09f85fd6eaecb85"
+      },
+      {
+        "file": "lounge-480.jpg",
+        "width": 480,
+        "height": 320,
+        "bytes": 33844,
+        "sha256": "6666f416daf02d104038f7f00e305ecb18ecc62005994caca3b644a21f03e1b0"
+      },
+      {
+        "file": "lounge-900.webp",
+        "width": 900,
+        "height": 600,
+        "bytes": 55516,
+        "sha256": "2e4e3f57ff57c8f3d52753c4bc39e7c5f3b507206f251240252d60c015dccf47"
+      },
+      {
+        "file": "lounge-900.jpg",
+        "width": 900,
+        "height": 600,
+        "bytes": 87715,
+        "sha256": "70c0fc56ab7fa8436b1b8a0e92df849c80a1621de5b99aee2d33898fe04d20ee"
+      },
+      {
+        "file": "lounge-1600.webp",
+        "width": 1600,
+        "height": 1067,
+        "bytes": 109874,
+        "sha256": "a35d7618cf0fb7f682ccf2e910c2471f1c86886d08898b0344cb60d9a5ba0916"
+      },
+      {
+        "file": "lounge-1600.jpg",
+        "width": 1600,
+        "height": 1067,
+        "bytes": 214242,
+        "sha256": "1a3adc1b63a0409aef5133d6371f6829b7ab1c4f3489a9319172549ee2575c17"
+      }
+    ]
+  }
+]
