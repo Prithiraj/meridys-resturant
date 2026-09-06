@@ -56,15 +56,23 @@ try {
   check(await page.locator('.questions details').nth(1).getAttribute('open')!==null,'no-JS: native FAQ expands');
   check(await page.locator('.menu-items li').count()===9,'no-JS: menu text present');
   await nojs.close();
-  const fallback=await browser.newContext({viewport:{width:1280,height:900}});
-  const fallbackPage=await fallback.newPage();
-  await fallbackPage.route('**/fonts.googleapis.com/**',route=>route.abort());
-  await fallbackPage.route('**/fonts.gstatic.com/**',route=>route.abort());
-  await fallbackPage.goto(url,{waitUntil:'networkidle'});
-  await fallbackPage.evaluate(()=>document.documentElement.style.zoom='2');
-  check(await fallbackPage.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth+1),'200% CSS zoom: reflow without horizontal overflow');
-  await fallbackPage.screenshot({path:'reports/screenshots/fallback-200-percent.png',fullPage:true});
-  await fallback.close();
+  // CSS `zoom` scales an element but does not emulate browser viewport zoom.
+  // Exercise the 640/320 CSS-pixel layouts and reduced viewport heights instead.
+  // W3C reflow reference: https://www.w3.org/WAI/WCAG22/Understanding/reflow
+  for (const scale of [2,4]) {
+    const fallback=await browser.newContext({viewport:{width:1280/scale,height:1024/scale},deviceScaleFactor:scale,reducedMotion:'reduce'});
+    const fallbackPage=await fallback.newPage();
+    await fallbackPage.route('**/fonts.googleapis.com/**',route=>route.abort());
+    await fallbackPage.route('**/fonts.gstatic.com/**',route=>route.abort());
+    for (const file of ['index.html','menu.html','about-this-site.html','404.html']) {
+      await fallbackPage.goto(url+(file==='index.html'?'':file),{waitUntil:'networkidle'});
+      check(await fallbackPage.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),`${scale*100}%-equivalent viewport, ${file}: reflow with font fallback`);
+      check(await fallbackPage.locator('.mobile-navigation summary').isVisible(),`${scale*100}%-equivalent viewport, ${file}: navigation available`);
+      if (scale===4) check(await fallbackPage.locator('.mobile-action-bar').evaluate(e=>getComputedStyle(e).position==='static'),`${file}: fixed controls disabled in the short viewport`);
+      if (file==='index.html') await fallbackPage.screenshot({path:`reports/screenshots/fallback-${scale*100}-equivalent.png`,fullPage:false});
+    }
+    await fallback.close();
+  }
 } catch(e) {failures.push(e.stack||String(e));}
 finally {
   await fs.writeFile('reports/browser-checks.json',JSON.stringify({checks:results.length,passed:results.filter(x=>x.passed).length,failures,results},null,2));
